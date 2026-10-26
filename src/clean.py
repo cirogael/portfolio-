@@ -2,6 +2,8 @@
 
 Uso: python src/clean.py  (antes correr src/download.py)
 """
+import json
+
 import pandas as pd
 
 from download import RAW_DIR, YEARS, detect_sep
@@ -142,6 +144,7 @@ def main() -> None:
     powerbi.to_csv(
         PROCESSED_DIR / "reclamos_powerbi.csv", index=False, encoding="utf-8-sig", date_format="%Y-%m-%d"
     )
+    (PROCESSED_DIR / "calidad.json").write_text(json.dumps(log, indent=2), encoding="utf-8")  # lo lee el notebook
     quality_report(df, log)
     print(f"\nGuardado en {PROCESSED_DIR}")
 
