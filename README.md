@@ -84,7 +84,8 @@ jupyter notebook notebooks/01_eda.ipynb
 ├── src/
 │   ├── download.py     # descarga los CSV anuales y muestra un resumen
 │   ├── clean.py        # limpieza, reporte de calidad, parquet + CSV para Power BI
-│   └── build_db.py     # carga a DuckDB y ejecuta las consultas
+│   ├── build_db.py     # carga a DuckDB y ejecuta las consultas
+│   └── dashboard_preview.py  # vista previa del dashboard con matplotlib
 ├── sql/kpis.sql        # una consulta comentada por pregunta de negocio
 ├── notebooks/01_eda.ipynb
 ├── reports/figures/    # gráficos exportados
@@ -96,12 +97,25 @@ jupyter notebook notebooks/01_eda.ipynb
 
 Guía completa con las medidas DAX en [`dashboard/README.md`](dashboard/README.md).
 
-<!-- Agregar las capturas del dashboard de Power BI:
+> **Vista previa hecha con Python, no es una captura de Power BI.** Las dos imágenes de abajo las genera
+> `src/dashboard_preview.py` con matplotlib a partir del mismo CSV y las mismas medidas que usa la guía, para mostrar
+> el diseño del dashboard. Se van a reemplazar por las capturas del dashboard real en Power BI.
+
+**Página 1 — Resumen** (KPIs y evolución mensual)
+
+![Vista previa del dashboard - Resumen (generada con Python)](reports/figures/dashboard_preview_pagina1.png)
+
+**Página 2 — Categorías, comunas y cierre**
+
+![Vista previa del dashboard - Categorías y comunas (generada con Python)](reports/figures/dashboard_preview_pagina2.png)
+
+<!-- Cuando estén las capturas de Power BI, reemplazar las imágenes de arriba por:
 ![Dashboard - Resumen](reports/figures/dashboard_pagina1.png)
 ![Dashboard - Categorías y comunas](reports/figures/dashboard_pagina2.png)
 -->
 
-_Captura del dashboard: próximamente._
+
+
 
 ## Qué aprendí / próximos pasos
 

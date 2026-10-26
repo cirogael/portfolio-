@@ -4,6 +4,10 @@ Paso a paso para construir el dashboard de reclamos en **Power BI Desktop** a pa
 `src/clean.py`. El resultado son dos páginas: un resumen con KPIs y evolución, y un detalle de categorías,
 comunas y tasa de cierre.
 
+> **Resultado esperado:** `python src/dashboard_preview.py` genera una vista previa de las dos páginas con matplotlib
+> (`reports/figures/dashboard_preview_pagina1.png` y `..._pagina2.png`). No es Power BI: sirve como referencia
+> del diseño y para comparar los números de las tarjetas.
+
 > El dataset no trae fecha de cierre, así que en lugar de "mediana de días de resolución" y "% en plazo"
 > el dashboard usa **% cerrado** y **reclamos abiertos**.
 
@@ -139,4 +143,5 @@ Sugerencia: título de la página "Reclamos ciudadanos CABA 2024–2026" y un cu
 
 1. Exportar cada página: **Archivo → Exportar → Exportar a PDF**, o tomar una captura de pantalla.
 2. Guardar las imágenes como `reports/figures/dashboard_pagina1.png` y `reports/figures/dashboard_pagina2.png`.
-3. Las referencias ya están en el `README.md` principal (sección *Dashboard*).
+3. En el `README.md` principal (sección *Dashboard*) reemplazar las imágenes de la vista previa por estas capturas
+   (el bloque comentado ya tiene las líneas listas) y borrar la aclaración de "vista previa hecha con Python".
