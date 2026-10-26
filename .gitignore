@@ -1,0 +1,11 @@
+# Datos: se descargan/generan con los scripts
+data/raw/*
+data/processed/*
+!data/**/.gitkeep
+*.duckdb
+*.duckdb.wal
+
+# Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/
