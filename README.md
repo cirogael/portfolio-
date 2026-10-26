@@ -128,4 +128,6 @@ Guía completa con las medidas DAX en [`dashboard/README.md`](dashboard/README.m
 
 ---
 
+**Nota sobre el desarrollo:** el planteo del análisis, la limpieza de datos, las consultas SQL y las conclusiones son de mi autoría. Usé Claude (IA) como asistente para subir el repositorio a GitHub y dejarlo funcionando, por eso figura como colaborador.
+
 Autor: [cirogael](https://github.com/cirogael) · Datos: Gobierno de la Ciudad de Buenos Aires (CC-BY-2.5-AR)
