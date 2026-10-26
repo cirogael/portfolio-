@@ -35,10 +35,16 @@ def download(year: int) -> Path:
     return dest
 
 
-def summarize(path: Path) -> None:
-    """Imprime filas, columnas y rango de fechas. Cada año viene con separador y formato de fecha distinto."""
+def detect_sep(path: Path) -> str:
+    """Cada año viene con un separador distinto (';' o ',')."""
     header = path.open(encoding="utf-8").readline()
-    sep = ";" if header.count(";") > header.count(",") else ","
+    return ";" if header.count(";") > header.count(",") else ","
+
+
+def summarize(path: Path) -> None:
+    """Imprime filas, columnas y rango de fechas."""
+    sep = detect_sep(path)
+    header = path.open(encoding="utf-8").readline()
     columns = [c.strip().strip('"') for c in header.split(sep)]
     fechas = pd.read_csv(path, sep=sep, usecols=["fecha_ingreso"], dtype=str)["fecha_ingreso"]
     fmt = "%d/%m/%Y" if "/" in fechas.dropna().iloc[0] else "%Y-%m-%d"
